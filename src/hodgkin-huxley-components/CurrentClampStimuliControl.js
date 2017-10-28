@@ -24,7 +24,7 @@ class StimuliControl extends Component{
 
 
     handleChange = (stim_name,name,value) =>{
-        console.log(this.state,stim_name,name,value);
+        //console.log(this.state,stim_name,name,value);
         // eslint-disable-next-line
         this.state[stim_name][name] = value;
         this.render();
@@ -47,7 +47,7 @@ class StimuliControl extends Component{
                         <Button
                             raised
                             color="primary"
-                            onClick={this.open}
+                            onClick={()=>this.props.hhparam.setWhichStim('stim1')}
 
                         >
                             Set Stim1
@@ -57,7 +57,7 @@ class StimuliControl extends Component{
                         <Button
                             raised
                             color="primary"
-                            onClick={this.open}
+                            onClick={()=>this.props.hhparam.setWhichStim('stim2')}
 
                         >
                             Set Stim2

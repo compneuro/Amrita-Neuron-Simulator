@@ -13,8 +13,12 @@ import {Col, Modal, Row} from 'react-bootstrap';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
 import SliderComponent from "../Slider";
+import RangeSliderComponent from '../Range';
+import {inject, observer} from 'mobx-react';
 
 
+@inject('hhparam')
+@observer
 export default class HodgkinHuxleyStim1Config extends Component{
 
     state = {
@@ -35,6 +39,7 @@ export default class HodgkinHuxleyStim1Config extends Component{
     };
 
     render(){
+        const param = this.props.hhparam;
         return(
             <div>
                 <Button
@@ -43,12 +48,12 @@ export default class HodgkinHuxleyStim1Config extends Component{
                     onClick={this.open}
                     dense={true}
                 >
-                    Config Stim 1
+                    Config Stim 2
                 </Button>
 
                 <Modal show={this.state.showModal} onHide={this.close} >
                     <Modal.Header closeButton>
-                        <Modal.Title>Stim 1 Config</Modal.Title>
+                        <Modal.Title>Stim 2 Config</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
 
@@ -56,20 +61,22 @@ export default class HodgkinHuxleyStim1Config extends Component{
                             <Row>
                                 <Col md={4}>
                                     <div style={{height: 100}}/>
-                                    <SliderComponent  width={200} axis="x"/>
+                                    <RangeSliderComponent id={"stim2"}  name="s2_time1" value={param.s2_time1}  vertical={false} onChange={param.setStimuli}/>
                                 </Col>
                                 <Col md={2}>
-                                    <SliderComponent height={200} axis="y"/>
+                                    <SliderComponent  id={"stim2"}  name="s2_v1" value={param.s2_v1} height={150}   vertical={true} onChange={param.setStimuli}/>
                                 </Col>
                                 <Col md={4}>
-                                    <div style={{height: 100}}/>
-                                    <SliderComponent width={200} axis="x"/>
+                                    <div style={{height: 100, margin:'0 auto'}} />
+
+                                    <RangeSliderComponent id={"stim2"}  name="s2_time2" value={param.s2_time2} vertical={false} onChange={param.setStimuli}/>
                                 </Col>
                                 <Col md={2}>
-                                    <SliderComponent height={200} axis="y"/>
+                                    <SliderComponent id={"stim2"}  name="s2_v2" value={param.s2_v2} height={150}  vertical={true} onChange={param.setStimuli} />
                                 </Col>
                             </Row>
                         </Grid>
+
 
 
                     </Modal.Body>

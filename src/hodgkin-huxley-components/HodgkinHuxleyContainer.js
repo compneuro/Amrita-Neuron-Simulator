@@ -66,6 +66,7 @@ class HodgkinHuxleyContainer extends Component{
 
     render(){
         const param = this.props.hhparam;
+        console.log(param);
         return(
             <Row className="show-grid">
                 <Col md={7}>

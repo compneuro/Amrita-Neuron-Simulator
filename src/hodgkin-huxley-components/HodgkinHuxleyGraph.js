@@ -10,7 +10,7 @@ www.amrita.edu/compneuro
 */
 import React, {Component} from 'react';
 import {inject, observer} from 'mobx-react';
-
+import {plotOptions,yAxis} from '../plotOptions';
 const Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 
@@ -38,6 +38,7 @@ export  class HodgkinHuxleyVoltageGraph extends Component{
 
         Highcharts.chart('main-graph',{
             chart:voltage_chart_config,
+            yAxis:yAxis,
             title: {
                 text: 'Voltage'
             },
@@ -63,6 +64,8 @@ export  class HodgkinHuxleyVoltageGraph extends Component{
             title: {
                 text: 'Voltage'
             },
+            plotOptions: plotOptions,
+            yAxis:yAxis,
             series:[{
                 name:'(mV)',
                 data:plot_data
@@ -97,6 +100,7 @@ export class HodgkinHuxleyChannelGraph extends Component{
             title: {
                 text: ''
             },
+            yAxis:yAxis,
             series: [
                 {
                     name:'channels',
@@ -120,6 +124,8 @@ export class HodgkinHuxleyChannelGraph extends Component{
             title: {
                 text: ''
             },
+            plotOptions: plotOptions,
+            yAxis:yAxis,
             series: [
                 {
                     name:'m',

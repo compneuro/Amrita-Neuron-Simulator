@@ -43,7 +43,7 @@ export default class Simulator extends Component{
                 <Appbar  position="static" >
                     <Toolbar>
                         <Typography type="title" color="inherit">
-                            Amrita Neuron Simulator
+                            <h4>Amrita Neuron Simulator</h4>
                         </Typography>
                         <div style={{width: 150}}/>
                         <Tabs

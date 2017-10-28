@@ -4,10 +4,27 @@
 different neuron model like Hodgkin-huxley, Adex, Izhikevich. The simulator
 UI is build using ReactJs and the state of the UI is managed using MobX.</p>
 
-<p>We have include a prebuilt simulator files in "/build" dir for quick
- use.</p>
 
- <h4>Project Structure.
+######################################################
+#													#
+#		#    #  ######  ########    ######			#
+#		# #  #  #    #      #       #               #
+#		#  # #  #    #      #       #####           #
+#		#	##	#	 #		#		#				#			
+#		#	 #  ###### 		#		######			#									
+#													#							
+######################################################################################
+#																					 #
+#<p>We have include a prebuilt simulator files in "/build" dir for quick use.</p>    #
+#<p> Use a webserver to mount the "/build" to the localhost to access the simulator  #
+# GUI<p>                                                                             #
+#																					 #
+######################################################################################
+
+
+
+
+ <h4>Project Structure.</h4>
 
  <p style="font-weight: bold;">The Source for the simulator is contained in the 'src' directory.<p>
  <li>'src'                               -- Containes base simulator UI components</li>
@@ -40,11 +57,6 @@ UI is build using ReactJs and the state of the UI is managed using MobX.</p>
 Happy Hacking.
 
 
-<h4>To build a new production bundle</h4>
-
-<li>Run "npm install"</li>
-<li>Run "npm build" </li>
-<p> Check /build/ dir for the new production bundle</p>
 
 
 

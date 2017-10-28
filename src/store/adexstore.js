@@ -143,6 +143,14 @@ class ADEX_PARAM{
             }
         }
 
+        V = V.map(function (val) {
+            if(val < -70){
+                return -70
+            }else {
+                return val
+            }
+        })
+
         if(this.multi){
             this.voltage = this.voltage.concat(V);
             this.w = this.w.concat(w);

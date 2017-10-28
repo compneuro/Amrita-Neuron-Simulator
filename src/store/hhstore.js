@@ -14,6 +14,7 @@ import {action, computed, observable} from 'mobx';
 
 class HH_PARAMS {
 
+    @observable stim = 'stim1';
     @observable multi=false;
     @observable mode = 'Current Clamp';
     @observable T = 6.3;
@@ -81,14 +82,17 @@ class HH_PARAMS {
     @observable ttx=0;
     @observable tea=0;
     @observable pronase=0;
+
     @observable s1_time1= [0,20];
     @observable s1_v1= 20;
     @observable s1_time2= [13,18];
     @observable s1_v2= 20;
+
     @observable s2_time1= [0,20];
     @observable s2_v1= 20;
     @observable s2_time2= [13,18];
     @observable s2_v2= 20;
+
     @observable v_data = [];
     @observable m_data = [];
     @observable h_data = [];
@@ -108,6 +112,7 @@ class HH_PARAMS {
     @observable v2x = 20;
     @observable v3y =-60;
     @observable v3x =20;
+
 
 
     @observable export_params = ['v_data','m_data','h_data' ,'n_data' ,'ileak_data','ina_data','ik_data','gna_data','gk_data'];
@@ -476,13 +481,26 @@ class HH_PARAMS {
         var nbs = this.n_beta_slope;//-0.012500000000000
         console.log(nexp, nac, nath, nas, nbc, nbth, nbs);
 
+        if(this.stim === 'stim1'){
+            //alert(this.stim)
+            var s0 = this.s1_time1[0];
+            var s1 = this.s1_time1[1];
+            var svalue2 = this.s1_v1;
+            var s3 = this.s1_time2[0];
+            var s4 = this.s1_time2[1];
+            var svalue5 =this.s1_v2;
+        }else if(this.stim === 'stim2'){
+            //alert(this.stim)
+            var s0 = this.s2_time1[0];
+            var s1 = this.s2_time1[1];
+            var svalue2 = this.s2_v1;
+            var s3 = this.s2_time2[0];
+            var s4 = this.s2_time2[1];
+            var svalue5 =this.s2_v2;
+        }
 
-        var s0 = this.s1_time1[0];
-        var s1 = this.s1_time1[1];
-        var svalue2 = this.s1_v1;
-        var s3 = this.s1_time2[0];
-        var s4 = this.s1_time2[1];
-        var svalue5 =this.s1_v2;
+
+
 
 
         const ileak_data = [];
@@ -757,12 +775,15 @@ class HH_PARAMS {
 
         var v1y = this.v1y;
         var v1x = this.v1x;
-
         var v2y = this.v2y;
         var v2x = this.v2x;
-
         var v3y =this.v3y;
         var v3x =this.v3x;
+
+
+
+
+
 
 
 
@@ -1093,7 +1114,7 @@ class HH_PARAMS {
         console.log(data);
         return data;
 
-    }
+    };
 
     @action handleExportParams = (checked,param) => {
         if(checked){
@@ -1108,6 +1129,10 @@ class HH_PARAMS {
                 return item !== param
             })
         }
+    };
+
+    @action setWhichStim = (stim_name) => {
+        this.stim = stim_name;
     };
 
 

@@ -10,6 +10,7 @@ www.amrita.edu/compneuro
 */
 import React, {Component} from 'react';
 import {inject, observer} from 'mobx-react';
+import {plotOptions,yAxis} from '../plotOptions';
 
 const Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
@@ -27,6 +28,7 @@ export default class IzhikevichGraph extends Component{
             title: {
                 text: 'Voltage'
             },
+            yAxis:yAxis,
             series: [
                 {
                     name:'Volatge',
@@ -50,6 +52,8 @@ export default class IzhikevichGraph extends Component{
             title: {
                 text: 'Voltage'
             },
+            plotOptions: plotOptions,
+            yAxis:yAxis,
             series:[{
                 name:'(mV)',
                 data:plot_data

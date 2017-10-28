@@ -9,8 +9,8 @@ Email: joshya@am.amrita.edu; shyam@amrita.edu
 www.amrita.edu/compneuro
 */
 import React, {Component} from 'react';
+import {plotOptions,yAxis} from '../plotOptions';
 import {inject, observer} from 'mobx-react';
-
 const Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 
@@ -27,6 +27,7 @@ export default class AdexGraph extends Component{
             title: {
                 text: 'Voltage'
             },
+            yAxis:yAxis,
             series: [
                 {
                     name:'Volatge',
@@ -50,6 +51,8 @@ export default class AdexGraph extends Component{
             title: {
                 text: 'Voltage'
             },
+            plotOptions: plotOptions,
+            yAxis:yAxis,
             series:[{
                 name:'(mV)',
                 data:plot_data
