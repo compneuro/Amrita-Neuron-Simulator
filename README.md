@@ -1,9 +1,13 @@
 <h1>Amrita Neuron Simulator.</h1>
 
 <p>Amrita Neuron simulator is a web project which can be used to simulate
-different neuron model like Hodgkin-huxley, Adex, Izhikevich. The simulator
+different neuron models like Hodgkin-huxley, Adex, Izhikevich. The simulator
 UI is build using ReactJs and the state of the UI is managed using MobX.</p>
 
+#Developed by Joshy Alphonse and Shyam Diwakar
+#Last updated 28-Oct-2017
+#http://www.amrita.edu/compneuro
+#E-mail: shyam@amrita.edu 
 
 ######################################################
 #													#
@@ -15,7 +19,7 @@ UI is build using ReactJs and the state of the UI is managed using MobX.</p>
 #													#							
 ######################################################################################
 #																					 #
-#<p>We have include a prebuilt simulator files in "/build" dir for quick use.</p>    #
+#<p> We have included a prebuilt simulator files in "/build" dir for quick use.</p>    #
 #<p> Use a webserver to mount the "/build" to the localhost to access the simulator  #
 # GUI<p>                                                                             #
 #																					 #
